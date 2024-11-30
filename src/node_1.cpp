@@ -39,7 +39,7 @@ int main (int argc, char **argv)
        ros::Publisher pub_turtle2 = nh.advertise<geometry_msgs::Twist>("/turtle2/cmd_vel", 10);
  
  
-       ros::Rate loop rate(10);
+       ros::Rate loop_rate(10);
        std::string turtle_name;
        
        double linear_velocity, angular_velocity ;
@@ -48,10 +48,10 @@ int main (int argc, char **argv)
       {
       std::cout << "enter the turtle name (turtle1 or turtle2):          "  ;
       std::cin >> turtle_name;
-      std::cout << "enter the turtle linear velocity:   " ;
-      std::cin >> linear_velocity
-      std::cout << "enter the turtle angular velocity:   " ;
-      std::cin >> angular_velocity
+      std::cout << "enter the turtle linear velocity:   ";
+      std::cin >> linear_velocity;
+      std::cout << "enter the turtle angular velocity:   ";
+      std::cin >> angular_velocity;
       
       
       
@@ -73,7 +73,7 @@ int main (int argc, char **argv)
       
       
       ros::spinOnce();
-      loop rate.sleep();
+      loop_rate.sleep();
       
       }
     return 0;
