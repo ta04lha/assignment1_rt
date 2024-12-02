@@ -136,7 +136,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/assignment1_rt_node.cpp)
 add_executable(node_1 src/node_1.cpp)
-
+add_executable(node_2 src/node_2.cpp)
 
 
 
@@ -157,7 +157,7 @@ add_executable(node_1 src/node_1.cpp)
 
 
 target_link_libraries(node_1 ${catkin_LIBRARIES})
-
+target_link_libraries(node_2 ${catkin_LIBRARIES})
 
 
 #############
