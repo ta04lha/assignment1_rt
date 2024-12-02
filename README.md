@@ -10,3 +10,10 @@
        published for 1 second 
        then we stop the turtle chosen
        with our loop will ask again the user to enter the desired inputs
+ node_2 
+       
+       we Define threshold values for distance and boundary
+       Define publishers and the Twist message for both turtles
+       we calculate the distance between the turtels 
+       with the callback we update the position of the turtles and calculate the distance every time 
+       

@@ -82,7 +82,7 @@ void poseCallbackturtle2(const turtlesim::Pose::ConstPtr& msg)
        ROS_INFO("distance between turtle1 and turtle2:f%", distance);
        
        
-        if (distance < DISTANCE_THRESHOLD || x2 < BOUNDARY_THRESHOLD || x2 > 10.0 || y2 < BOUNDARY_THRESHOLD || y2 > 10.0)
+       if (distance < DISTANCE_THRESHOLD || x2 < BOUNDARY_THRESHOLD || x2 > 10.0 || y2 < BOUNDARY_THRESHOLD || y2 > 10.0)
     {
         
         geometry_msgs::Twist stop_msg;
@@ -101,36 +101,25 @@ int main(int argc, char **argv)
 {
 
         ros::init(argc,argv, "node_2");
-        NodeHandel nh;
+        ros::NodeHandle nh;
         
         
         
         
-        pub_turtle1 = nh.advertise<geometry_msgs::Twist>("/turtle1/cmd_vel", 10);
-        pub_turtle2 = nh.advertise<geometry_msgs::Twist>("/turtle2/cmd_vel", 10);
+        pub_turtle1 = nh.advertise<geometry_msgs::Twist> ("/turtle1/cmd_vel", 10);
+        pub_turtle2 = nh.advertise<geometry_msgs::Twist> ("/turtle2/cmd_vel", 10);
         
         
         
         
-        ros::Subscriber sub_turtle1 = nh.subscribe("/turtle1/pose", 10, poseCallbackTurtle1);
-        ros::Subscriber sub_turtle2 = nh.subscribe("/turtle2/pose", 10, poseCallbackTurtle2);
+        ros::Subscriber sub_turtle1 = nh.subscribe("/turtle1/pose", 10, poseCallbackturtle1);
+        ros::Subscriber sub_turtle2 = nh.subscribe("/turtle2/pose", 10, poseCallbackturtle2);
 
 
   
         ros::spin();
         
         return 0;
-
-
-
-
-
-
-
-
-
-
-
 
 
 
